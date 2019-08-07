@@ -4,13 +4,234 @@
   margin: 0;
   padding: 0; }
 
+li {
+  list-style: none; }
+
+li > a {
+  text-decoration: none; }
+
+li > a:hover {
+  cursor: pointer; }
+
 header {
   background: #0D0D0D;
-  height: 100vh;
+  height: 700px;
   width: 100%; }
   header .header_container {
     max-width: 1280px;
     height: 100%;
     padding: 10px;
-    margin: 0 auto;
-    background: #777; }
+    margin: 0 auto; }
+    header .header_container nav {
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; }
+      header .header_container nav .menu {
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        color: #FFFFFF;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 50%;
+        text-transform: uppercase;
+        margin-top: 20px; }
+        header .header_container nav .menu li {
+          -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear; }
+          header .header_container nav .menu li:hover {
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            cursor: pointer;
+            color: #F87D43; }
+    header .header_container .title {
+      color: #FFFFFF;
+      margin: 0 auto;
+      max-width: 800px;
+      height: 650px;
+      padding-top: 150px; }
+      header .header_container .title .name {
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 4px;
+        width: 340px;
+        height: 60px;
+        padding: 17px 5px;
+        text-transform: uppercase;
+        margin: 0 auto 50px;
+        background: #FFFFFF;
+        color: #2B2B2B; }
+      header .header_container .title h1 {
+        font-size: 48px;
+        text-align: center; }
+      header .header_container .title .title_btns {
+        width: 400px;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        margin: 30px auto 0;
+        height: 70px;
+        text-transform: uppercase; }
+      header .header_container .title .title-btn {
+        margin: 0 auto;
+        background: transparent;
+        float: left;
+        border: 1px solid #FFFFFF;
+        display: inline-block;
+        padding: 25px 40px;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear; }
+        header .header_container .title .title-btn:hover {
+          -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear;
+          cursor: pointer;
+          background: rgba(255, 255, 255, 0.3); }
+      header .header_container .title .mouse {
+        height: 40px;
+        width: 40px;
+        margin: 180px auto 0; }
+        header .header_container .title .mouse svg {
+          fill: #FFF;
+          -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear; }
+          header .header_container .title .mouse svg:hover {
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            fill: #F87D43;
+            cursor: pointer; }
+
+main {
+  background: #FFFFFF;
+  height: auto; }
+
+section {
+  max-width: 1280px;
+  height: 100%;
+  padding: 10px;
+  margin: 0 auto; }
+
+.advantage {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px; }
+  .advantage .advantage_card {
+    color: #FFFFFF;
+    background: #444;
+    padding: 25px;
+    justify-self: center;
+    margin: 20px 0px;
+    width: 250px;
+    max-width: 300px;
+    height: 250px;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .advantage .advantage_card:nth-child(odd) {
+      background: #111; }
+    .advantage .advantage_card:nth-child(even) {
+      background: #222; }
+    .advantage .advantage_card .advantage_card_title {
+      text-transform: uppercase;
+      margin: 20px 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-align: center; }
+    .advantage .advantage_card .advantage_card_icon img {
+      width: 60px;
+      height: 60px; }
+    .advantage .advantage_card .advantage_card_text {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+      flex: 1 0 100%;
+      width: 200px;
+      text-align: center; }
+
+h2 {
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase; }
+
+.about_container {
+  display: grid;
+  display: -ms-grid;
+  grid: 1fr 1fr/ 1fr 1fr;
+  -ms-grid-columns: 1fr 15px 1fr;
+  -ms-grid-rows: 1fr 15px 1fr;
+  grid-gap: 15px;
+  background: red; }
+  .about_container .info {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    height: auto;
+    background: yellow; }
+    .about_container .info .text {
+      font-size: 18px;
+      line-height: 22px;
+      font-style: italic;
+      color: #6C6A6B; }
+    .about_container .info table {
+      color: #6C6A6B;
+      width: 65%;
+      height: 200px;
+      margin-top: 30px;
+      border-spacing: 0px 30px;
+      border-collapse: collapse;
+      font-size: 18px; }
+      .about_container .info table .col1 {
+        font-weight: bold;
+        font-size: 20px;
+        color: #2B2B2B; }
+      .about_container .info table span {
+        font-weight: bold;
+        margin-right: 20px;
+        font-size: 20px; }
+  .about_container .photo {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+    height: 200px;
+    background: blue; }
+  .about_container .progress {
+    -ms-grid-column: 1;
+    -ms-grid-row: 3;
+    height: 200px;
+    background: black; }
+  .about_container .stack {
+    -ms-grid-column: 3;
+    -ms-grid-row: 3;
+    height: 200px;
+    background: aqua; }

@@ -2,21 +2,271 @@
 @import "mixins";
 @import "variables";
 
-
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+li{
+    list-style: none;
+}
+li>a{
+    text-decoration: none;
+}
+li>a:hover{
+    cursor: pointer;
+}
+
 header{
     background: #0D0D0D;
-    height: 100vh;
+    height: 700px;
     width: 100%;
     
     .header_container{
         @include justify;
-        background: #777;
+        
+        
+        nav{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            justify-content: flex-end;
+            
+            .menu{
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                color: $second_color;
+                justify-content: space-between;
+                width: 50%;
+                text-transform: uppercase;
+                margin-top: 20px;
+                li{ 
+                    @include shift;
+                    
+                    &:hover{
+                        @include shift;
+                        cursor: pointer;
+                        color: $accent_color;
+                    }
+                }
+            }
+        }
+        
+        .title{
+            color: $second_color;
+            margin: 0 auto;
+            max-width: 800px;
+            height: 650px;
+            
+            padding-top: 150px;
+                        
+            .name{
+                 text-align: center;
+                font-size: 20px;
+                letter-spacing: 4px;
+                width: 340px;
+                height: 60px;
+                padding: 17px 5px;
+                text-transform: uppercase;
+                margin: 0 auto 50px;
+                
+                background: $second_color;
+                color: $main_color;
+                
+            }
+            h1{    
+                font-size: 48px;
+                text-align: center;
+               
+            }
+            .title_btns{
+                
+                width: 400px;
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                justify-content: space-around;
+                margin: 30px auto 0;
+                height: 70px;
+                text-transform: uppercase;
+                
+            }
+            .title-btn{
+                margin: 0 auto;
+                background: transparent;
+                float: left;
+                border: $btn_border;
+                display: inline-block;
+                padding: 25px 40px;
+                
+                  @include shift;
+                
+                &:hover{
+                      @include shift;
+                    cursor: pointer;
+                    background: rgba(255,255,255, 0.3);
+                }
+            }
+            .mouse{
+                height: 40px;
+                width: 40px;
+                margin: 180px auto 0;
+                svg{
+                    fill: #FFF;
+                    @include shift;
+                    
+                    &:hover{
+                        @include shift;
+                        fill: $accent_color;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
 }
 
+main{
+    background: #FFFFFF;
+    height: auto;
+
+}
+
+section{
+    @include justify;
+}
+.advantage{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    width: 100%;
+    margin-top: 20px;
+    .advantage_card{
+        color: $second_color;
+        background: #444;
+        padding: 25px;
+        justify-self: center;
+        margin: 20px 0px;
+        width: 250px;
+        max-width: 300px;
+        height: 250px;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-direction: column;
+       align-items: center;
+       
+        &:nth-child(odd){
+            background: #111;
+        }
+        &:nth-child(even){
+            background: #222;
+        }
+        .advantage_card_title{
+           text-transform: uppercase;
+            margin: 20px 0;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .advantage_card_icon{
+            img{
+                
+                width: 60px;
+                height: 60px;
+            }
+        }
+        .advantage_card_text{
+           flex: 1 0 100%;
+           width: 200px;    
+            text-align: center;
+        }
+    }
+}
+ h2{
+        text-align: center;
+        width: 100%;
+     text-transform: uppercase;
+    }
+.about_container{
+
+    display: grid;
+    display: -ms-grid;
+    grid: 1fr 1fr/ 1fr 1fr;
+    -ms-grid-columns: 1fr 15px 1fr;
+    -ms-grid-rows: 1fr 15px 1fr;
+    
+    grid-gap: 15px;
+    background: red;
+    
+    .info{
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        height: auto;
+        background: yellow;
+        .text{
+           font-size: 18px;
+            line-height: 22px;
+            font-style: italic;
+            color: $passive_color;
+        }
+        table{
+            color: $passive_color;
+            width: 65%;
+            height: 200px;
+            margin-top: 30px;
+            border-spacing: 0px 30px;
+            border-collapse: collapse;
+            font-size: 18px;
+            .col1{
+                font-weight: bold;
+                font-size: 20px;
+                color: $main_color;
+                
+            }
+            span{
+                font-weight: bold;
+                margin-right: 20px;
+                font-size: 20px;
+            }
+        }
+    }
+    
+    .photo{
+        -ms-grid-column: 3;
+        -ms-grid-row: 1;
+        height: 200px;
+        background: blue;
+    }
+    
+    .progress{
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+        height: 200px;
+        background: black;
+        
+    }
+    
+    .stack{
+        -ms-grid-column: 3;
+        -ms-grid-row: 3;
+        height: 200px;
+        background: aqua;
+    }
+}
 
