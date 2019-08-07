@@ -6,6 +6,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    
+   
 }
 
 li{
@@ -17,6 +20,22 @@ li>a{
 li>a:hover{
     cursor: pointer;
 }
+h2, h3{
+    color: $main_color;
+    font-weight: 800;
+}
+h2{
+        text-align: center;
+        width: 100%;
+     text-transform: uppercase;
+     margin: 60px 0;
+    }
+h3{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 
 header{
     background: #0D0D0D;
@@ -100,6 +119,7 @@ header{
                 
             }
             .title-btn{
+                font-weight: 400;
                 margin: 0 auto;
                 background: transparent;
                 float: left;
@@ -118,7 +138,7 @@ header{
             .mouse{
                 height: 40px;
                 width: 40px;
-                margin: 180px auto 0;
+                margin: 150px auto 0;
                 svg{
                     fill: #FFF;
                     @include shift;
@@ -162,7 +182,7 @@ section{
         margin: 20px 0px;
         width: 250px;
         max-width: 300px;
-        height: 250px;
+        height: 280px;
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -198,11 +218,7 @@ section{
         }
     }
 }
- h2{
-        text-align: center;
-        width: 100%;
-     text-transform: uppercase;
-    }
+ 
 .about_container{
 
     display: grid;
@@ -211,14 +227,14 @@ section{
     -ms-grid-columns: 1fr 15px 1fr;
     -ms-grid-rows: 1fr 15px 1fr;
     
-    grid-gap: 15px;
-    background: red;
+    grid-gap: 35px;
+   
     
     .info{
         -ms-grid-column: 1;
         -ms-grid-row: 1;
         height: auto;
-        background: yellow;
+        ;
         .text{
            font-size: 18px;
             line-height: 22px;
@@ -227,15 +243,15 @@ section{
         }
         table{
             color: $passive_color;
-            width: 65%;
+            width: 100%;
             height: 200px;
-            margin-top: 30px;
+            margin-top: 20px;
             border-spacing: 0px 30px;
             border-collapse: collapse;
             font-size: 18px;
             .col1{
-                font-weight: bold;
-                font-size: 20px;
+                font-weight: 600;
+                font-size: 18px;
                 color: $main_color;
                 
             }
@@ -245,28 +261,206 @@ section{
                 font-size: 20px;
             }
         }
+        .social{
+            margin-top: 20px;
+          display: inline-block;
+            height: auto;
+            .social_item{ 
+                border: 1px solid $accent_color;
+                border-radius: 50px;
+                height: 45px;
+                width: 45px;
+                padding: 7px;
+                float: left;
+                margin-right: 20px;
+                &:hover{
+                    cursor: pointer;
+                }
+                svg{
+                height: 30px;
+                width: 30px;
+                }
+            }
+        }
     }
     
     .photo{
+       // border-radius: 30px;
         -ms-grid-column: 3;
         -ms-grid-row: 1;
-        height: 200px;
-        background: blue;
+        height: 100%;
+       background: url(../images/photo1.jpg);
+        background-size: cover;
+       
     }
     
     .progress{
+        
         -ms-grid-column: 1;
         -ms-grid-row: 3;
         height: 200px;
-        background: black;
+       
         
+        .skill{
+            
+            margin: 15px 0;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            justify-content: space-between;
+            
+            .skill_name{
+              text-transform: capitalize;
+                font-size: 18px;
+                width: 160px;
+            }
+            .skill_bar{
+               
+                width: 100%;
+                .line{
+                     position: relative;
+                    height: 40%;
+                    background: $accent_color;
+                    margin-top: 10px;
+                    .point{
+                        position: absolute;
+                        display: block;
+                        right: -15px;
+                        top: -4px;
+                        border: 7px solid $accent_color;
+                        border-radius: 20px;
+                        width: 20px;
+                        height: 20px;
+                        
+                    }
+                }
+            }
+            #skill_bar1{
+                
+                .line{
+                    width: 90%;
+                 
+                }
+                
+            }    
+            #skill_bar2{
+            
+                    .line{
+                        width: 80%;
+                    }
+                
+            }
+            #skill_bar3{
+                    .line{
+                        width: 45%;
+                    }
+                
+            }
+            
+            .percent{
+                width: 100px;
+                text-align: center;
+                color: $accent_color;
+                font-weight: bold;
+            }
+            
+        }
+        
+
     }
     
     .stack{
         -ms-grid-column: 3;
         -ms-grid-row: 3;
-        height: 200px;
-        background: aqua;
+       
+           
+    }
+    .stack_cards{
+        margin-top: 15px;
+        padding: 20px 10px;
+         background: #D1D3C6;
+        height: auto;
+       
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .stack_card{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70px;
+               margin: 10px 5px; 
+            
+            img{
+                width: 40px;
+                height: 40px;
+                margin-bottom: 10px;
+            }
+        }
     }
 }
 
+/* open-sans-300 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+       url('../fonts/open-sans-v17-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v17-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-300italic - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'),
+       url('../fonts/open-sans-v17-latin-300italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v17-latin-300italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('../fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+       url('../fonts/open-sans-v17-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v17-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('../fonts/open-sans-v17-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-800 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+       url('../fonts/open-sans-v17-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/open-sans-v17-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

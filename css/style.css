@@ -2,7 +2,8 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: 'Open Sans', sans-serif; }
 
 li {
   list-style: none; }
@@ -12,6 +13,21 @@ li > a {
 
 li > a:hover {
   cursor: pointer; }
+
+h2, h3 {
+  color: #2B2B2B;
+  font-weight: 800; }
+
+h2 {
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  margin: 60px 0; }
+
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700; }
 
 header {
   background: #0D0D0D;
@@ -88,6 +104,7 @@ header {
         height: 70px;
         text-transform: uppercase; }
       header .header_container .title .title-btn {
+        font-weight: 400;
         margin: 0 auto;
         background: transparent;
         float: left;
@@ -104,7 +121,7 @@ header {
       header .header_container .title .mouse {
         height: 40px;
         width: 40px;
-        margin: 180px auto 0; }
+        margin: 150px auto 0; }
         header .header_container .title .mouse svg {
           fill: #FFF;
           -webkit-transition: all 0.3s linear;
@@ -147,7 +164,7 @@ section {
     margin: 20px 0px;
     width: 250px;
     max-width: 300px;
-    height: 250px;
+    height: 280px;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
@@ -181,24 +198,17 @@ section {
       width: 200px;
       text-align: center; }
 
-h2 {
-  text-align: center;
-  width: 100%;
-  text-transform: uppercase; }
-
 .about_container {
   display: grid;
   display: -ms-grid;
   grid: 1fr 1fr/ 1fr 1fr;
   -ms-grid-columns: 1fr 15px 1fr;
   -ms-grid-rows: 1fr 15px 1fr;
-  grid-gap: 15px;
-  background: red; }
+  grid-gap: 35px; }
   .about_container .info {
     -ms-grid-column: 1;
     -ms-grid-row: 1;
-    height: auto;
-    background: yellow; }
+    height: auto; }
     .about_container .info .text {
       font-size: 18px;
       line-height: 22px;
@@ -206,32 +216,173 @@ h2 {
       color: #6C6A6B; }
     .about_container .info table {
       color: #6C6A6B;
-      width: 65%;
+      width: 100%;
       height: 200px;
-      margin-top: 30px;
+      margin-top: 20px;
       border-spacing: 0px 30px;
       border-collapse: collapse;
       font-size: 18px; }
       .about_container .info table .col1 {
-        font-weight: bold;
-        font-size: 20px;
+        font-weight: 600;
+        font-size: 18px;
         color: #2B2B2B; }
       .about_container .info table span {
         font-weight: bold;
         margin-right: 20px;
         font-size: 20px; }
+    .about_container .info .social {
+      margin-top: 20px;
+      display: inline-block;
+      height: auto; }
+      .about_container .info .social .social_item {
+        border: 1px solid #F87D43;
+        border-radius: 50px;
+        height: 45px;
+        width: 45px;
+        padding: 7px;
+        float: left;
+        margin-right: 20px; }
+        .about_container .info .social .social_item:hover {
+          cursor: pointer; }
+        .about_container .info .social .social_item svg {
+          height: 30px;
+          width: 30px; }
   .about_container .photo {
     -ms-grid-column: 3;
     -ms-grid-row: 1;
-    height: 200px;
-    background: blue; }
+    height: 100%;
+    background: url(../images/photo1.jpg);
+    background-size: cover; }
   .about_container .progress {
     -ms-grid-column: 1;
     -ms-grid-row: 3;
-    height: 200px;
-    background: black; }
+    height: 200px; }
+    .about_container .progress .skill {
+      margin: 15px 0;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .about_container .progress .skill .skill_name {
+        text-transform: capitalize;
+        font-size: 18px;
+        width: 160px; }
+      .about_container .progress .skill .skill_bar {
+        width: 100%; }
+        .about_container .progress .skill .skill_bar .line {
+          position: relative;
+          height: 40%;
+          background: #F87D43;
+          margin-top: 10px; }
+          .about_container .progress .skill .skill_bar .line .point {
+            position: absolute;
+            display: block;
+            right: -15px;
+            top: -4px;
+            border: 7px solid #F87D43;
+            border-radius: 20px;
+            width: 20px;
+            height: 20px; }
+      .about_container .progress .skill #skill_bar1 .line {
+        width: 90%; }
+      .about_container .progress .skill #skill_bar2 .line {
+        width: 80%; }
+      .about_container .progress .skill #skill_bar3 .line {
+        width: 45%; }
+      .about_container .progress .skill .percent {
+        width: 100px;
+        text-align: center;
+        color: #F87D43;
+        font-weight: bold; }
   .about_container .stack {
     -ms-grid-column: 3;
-    -ms-grid-row: 3;
-    height: 200px;
-    background: aqua; }
+    -ms-grid-row: 3; }
+  .about_container .stack_cards {
+    margin-top: 15px;
+    padding: 20px 10px;
+    background: #D1D3C6;
+    height: auto;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .about_container .stack_cards .stack_card {
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 70px;
+      margin: 10px 5px; }
+      .about_container .stack_cards .stack_card img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px; }
+
+/* open-sans-300 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Open Sans Light"), local("OpenSans-Light"), url("../fonts/open-sans-v17-latin-300.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-300.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
+
+/* open-sans-300italic - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local("Open Sans Light Italic"), local("OpenSans-LightItalic"), url("../fonts/open-sans-v17-latin-300italic.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-300italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("../fonts/open-sans-v17-latin-regular.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
+
+/* open-sans-600 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url("../fonts/open-sans-v17-latin-600.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-600.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
+
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("../fonts/open-sans-v17-latin-700.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
+
+/* open-sans-800 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local("Open Sans ExtraBold"), local("OpenSans-ExtraBold"), url("../fonts/open-sans-v17-latin-800.woff2") format("woff2"), url("../fonts/open-sans-v17-latin-800.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
