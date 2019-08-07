@@ -1,0 +1,6 @@
+@mixin justify{
+    max-width: $wraper-width;
+    height: 100%;
+    padding: $wraper_padding;
+    margin: 0 auto;
+}
