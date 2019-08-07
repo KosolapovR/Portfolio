@@ -237,8 +237,14 @@
             </div>
         </div>
     </section>
-    <section class="skills"></section>
-    <section class="works"></section>
+    <section class="works">
+        <h2>Recent works</h2>
+        <div class="works_container">
+           <div class="site"><a href=""><img src="" alt=""></a></div>
+           <div class="site"><a href=""><img src="" alt=""></a></div>
+           <div class="site"><a href=""><img src="" alt=""></a></div>
+        </div>
+    </section>
     <section class="contact"></section>
   </main>
   <footer></footer>
