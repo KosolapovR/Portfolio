@@ -72,6 +72,7 @@ header{
                         @include shift;
                         cursor: pointer;
                         color: $accent_color;
+                        
                     }
                 }
             }
@@ -94,9 +95,15 @@ header{
                 padding: 17px 5px;
                 text-transform: uppercase;
                 margin: 0 auto 50px;
-                
+                word-spacing: 10px;
+                font-weight: 600;
                 background: $second_color;
                 color: $main_color;
+                  @include shift;
+                &:hover{
+                     box-shadow: 0 0 20px rgba(244,244,244,0.5);
+                      @include shift;
+                }
                 
             }
             h1{    
@@ -133,18 +140,21 @@ header{
                       @include shift;
                     cursor: pointer;
                     background: rgba(255,255,255, 0.3);
+                     box-shadow: 0 0 20px rgba(244,244,244,0.5);
                 }
             }
             .mouse{
                 height: 40px;
                 width: 40px;
                 margin: 150px auto 0;
+               
                 svg{
                     fill: #FFF;
                     @include shift;
                     
                     &:hover{
                         @include shift;
+                       
                         fill: $accent_color;
                         cursor: pointer;
                     }
@@ -223,9 +233,9 @@ section{
 
     display: grid;
     display: -ms-grid;
-    grid: 1fr 1fr/ 1fr 1fr;
+    grid: 1fr auto/ 1fr 1fr;
     -ms-grid-columns: 1fr 15px 1fr;
-    -ms-grid-rows: 1fr 15px 1fr;
+    -ms-grid-rows: 1fr 15px auto;
     
     grid-gap: 35px;
    
@@ -409,6 +419,91 @@ section{
         }
     }
 }
+
+.works_container{
+    //overflow-x: hidden;
+    height: auto;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+     align-items: space-around;
+    
+    .site{
+        position: relative;
+       height: auto;
+        margin-bottom: 50px;
+        
+        .layer{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 90%;
+            height: 90%;
+            background: rgba(248, 125, 67, 0.0);
+            
+            @include shift;
+            
+            .transit{
+                img{
+                    width: 30px;
+                    height: 30px;
+                    opacity: 0.0;
+                    
+                }
+            }
+        }
+        
+        &:hover .layer{
+            @include shift;
+           background: rgba(248, 125, 67, 0.7);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+        &:hover .transit img{
+             opacity: 1;
+            @include shift;
+            animation: ping 1.3s infinite;
+        }
+        img{
+            height: 205px;
+            width: 400px;
+            
+        }
+    }
+}
+
+@-webkit-keyframes ping {
+    0% {transform: scale(1.0);  }
+    50% {transform: scale(1.2); }
+    100% {transform: scale(1.0); }
+}
+@-o-keyframes ping {
+    0% {transform: scale(1.0);  }
+    50% {transform: scale(1.2); }
+    100% {transform: scale(1.0); }
+}
+@-moz-keyframes ping {
+    0% {transform: scale(1.0);  }
+    50% {transform: scale(1.2); }
+    100% {transform: scale(1.0); }
+}
+@keyframes ping {
+    0% {transform: scale(1.0);  }
+    50% {transform: scale(1.2); }
+    100% {transform: scale(1.0); }
+};
 
 /* open-sans-300 - latin */
 @font-face {

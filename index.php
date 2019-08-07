@@ -240,9 +240,21 @@
     <section class="works">
         <h2>Recent works</h2>
         <div class="works_container">
-           <div class="site"><a href=""><img src="" alt=""></a></div>
-           <div class="site"><a href=""><img src="" alt=""></a></div>
-           <div class="site"><a href=""><img src="" alt=""></a></div>
+           <a href="http://www.nevadoc.ru" target="_blank"><div class="site"><img src="images/site1.jpg" alt="img_site">
+           <div class="layer">
+               <div class="transit"><img src="icons/files-transit.svg" alt=""></div>
+           </div>
+           </div></a>
+           <a href="https://github.com/KosolapovR/VOIP" target="_blank"><div class="site"><img src="images/site2.jpg" alt="img_site">
+            <div class="layer">
+               <div class="transit"><img src="icons/files-transit.svg" alt=""></div>
+           </div>
+           </div></a>
+           <a href="https://github.com/KosolapovR/Nikolskoe" target="_blank"><div class="site"><img src="images/site3.jpg" alt="img_site">
+            <div class="layer">
+               <div class="transit"><img src="icons/files-transit.svg" alt=""></div>
+           </div>
+           </div></a>
         </div>
     </section>
     <section class="contact"></section>
