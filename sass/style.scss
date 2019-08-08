@@ -2,7 +2,7 @@
 @import "mixins";
 @import "variables";
 
-*{
+*{ 
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -38,7 +38,10 @@ h3{
 
 
 header{
-    background: #0D0D0D;
+    
+    background: url(../bg/bg1.jpg);
+    background-size: cover;
+   //background: #0D0D0D;
     height: 700px;
     width: 100%;
     
@@ -62,17 +65,20 @@ header{
                 display: flex;
                 color: $second_color;
                 justify-content: space-between;
-                width: 50%;
+                width: 30%;
                 text-transform: uppercase;
                 margin-top: 20px;
                 li{ 
                     @include shift;
                     
+                    display: block;
+                    padding: 5px 20px;
                     &:hover{
                         @include shift;
                         cursor: pointer;
-                        color: $accent_color;
                         
+                       text-shadow: 0 0 25px #ffffff;
+                        font-weight: 800;
                     }
                 }
             }
@@ -91,10 +97,10 @@ header{
                 font-size: 20px;
                 letter-spacing: 4px;
                 width: 340px;
-                height: 60px;
-                padding: 17px 5px;
+                height: 40px;
+                padding: 7px 5px;
                 text-transform: uppercase;
-                margin: 0 auto 50px;
+                margin: 0 auto 30px;
                 word-spacing: 10px;
                 font-weight: 600;
                 background: $second_color;
@@ -121,7 +127,7 @@ header{
                 display: flex;
                 justify-content: space-around;
                 margin: 30px auto 0;
-                height: 70px;
+                height: 40px;
                 text-transform: uppercase;
                 
             }
@@ -132,7 +138,7 @@ header{
                 float: left;
                 border: $btn_border;
                 display: inline-block;
-                padding: 25px 40px;
+                padding: 7px 40px;
                 
                   @include shift;
                 
@@ -331,18 +337,18 @@ section{
                 width: 100%;
                 .line{
                      position: relative;
-                    height: 40%;
-                    background: $accent_color;
+                    height: 20%;
+                    background: $passive_color;
                     margin-top: 10px;
                     .point{
                         position: absolute;
                         display: block;
                         right: -15px;
                         top: -4px;
-                        border: 7px solid $accent_color;
+                        border: 4px solid $passive_color;
                         border-radius: 20px;
-                        width: 20px;
-                        height: 20px;
+                        width: 14px;
+                        height: 14px;
                         
                     }
                 }
@@ -372,7 +378,7 @@ section{
             .percent{
                 width: 100px;
                 text-align: center;
-                color: $accent_color;
+                color: $passive_color;
                 font-weight: bold;
             }
             
