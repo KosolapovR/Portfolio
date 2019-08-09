@@ -20,11 +20,21 @@
   <header>
    <div class="header_container">
     <nav>
+     <!-- Desktop version menu -->
       <ul class="menu">
           <li><a href="http://localhost/portf/index.php">home</a></li>
           <li><a href="">works</a></li>
           <li><a href="">skills</a></li>
           <li><a href="">contact</a></li>
+      </ul>
+      <!-- Mobile version menu -->
+      <ul id="menu-mobile" class="menu-mobile">
+         <img id="menu-humberger" src="./icons/menu.svg" alt="">
+         <img id="close-menu" src="./icons/delete.svg" alt="close_menu">
+          <li id="li1"><a href="http://localhost/portf/index.php">home</a></li>
+          <li id="li2"><a href="">works</a></li>
+          <li id="li3"><a href="">skills</a></li>
+          <li id="li4"><a href="">contact</a></li>
       </ul>
     </nav>
     <div class="title">
