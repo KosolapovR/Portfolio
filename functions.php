@@ -20,7 +20,6 @@ function mbWordwrap($str, $width = 40, $break = "\n", $cut = false)
 
         
 $msg = mbWordwrap($msg);
-$msg = crc32($msg);
 
 $headers = [
     'From' => $from,

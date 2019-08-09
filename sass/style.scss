@@ -48,11 +48,13 @@ h3{
     color: #666;
 }
 
+
 header{
     
     background: url(../bg/bg1.jpg);
     background-size: cover;
    //background: #0D0D0D;
+    //height: 100vh;
     height: 700px;
     width: 100%;
     
@@ -76,17 +78,18 @@ header{
                 display: flex;
                 color: $second_color;
                 justify-content: space-between;
-                width: 30%;
+                width: 300px;
                 text-transform: uppercase;
                 margin-top: 20px;
                 li{ 
                   
-                   width: 24%;
+                   width: 23%;
+                    //min-width: 60px;
                     a{
                         width: 100%;
                             @include shift;
                     color: #fff;
-                    
+                    margin-left: -15px;
                     
                     &:hover{
                         @include shift;
@@ -196,6 +199,7 @@ main{
 section{
     @include justify;
 }
+
 .advantage{
     display: -webkit-flex;
     display: -moz-flex;
@@ -256,8 +260,8 @@ section{
 
     display: grid;
     display: -ms-grid;
-    grid: 1fr auto/ 1fr 1fr;
-    -ms-grid-columns: 1fr 15px 1fr;
+    grid: 1fr auto/ minmax(320px, 1fr)  minmax(320px, 1fr);
+    -ms-grid-columns: minmax(320px, 1fr) 15px minmax(320px, 1fr);
     -ms-grid-rows: 1fr 15px auto;
     
     grid-gap: 35px;
@@ -506,6 +510,7 @@ section{
         }
     }
 }
+
 .contact_container{
     width: 100%;
     height: auto;
@@ -601,8 +606,159 @@ section{
 footer{
     width: 100%;
     height: 100px;
-    background: #F7F5F6;
+ //   background: #F7F5F6;
+    background: url(../bg/bg1.jpg);
     border-top: 1px solid lighten($passive_color, 40%);
+}
+
+
+@media (max-width: 700px) {
+    header{
+        height: 100vh;
+    }
+  .about_container{
+      .progress{
+          display: none;
+      }
+
+    
+    grid: repeat(3, 1fr)/ 1fr;
+    -ms-grid-columns: 100%;
+    -ms-grid-rows: auto 15px auto 15px auto;
+      justify-content: space-around;
+    width: 100%;
+    grid-gap: 25px;
+        .info{
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        grid-row: 2;
+        
+            .text{
+                
+               //width: 320px;
+                width: 100%;
+                background: red;
+                //height: auto;
+            }
+      }
+          
+      .photo{
+          -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        grid-row: 1;
+          width: 300px;
+      }
+      .stack{
+          -ms-grid-column: 1;
+        -ms-grid-row: 5;
+        grid-row: 3;  
+          width: 100%;
+      }
+    }
+    .contact_container{
+        flex-direction: column;
+        .col1{
+          order: 1;
+            height: auto;
+        }
+        .social_item-call{
+                a {
+                svg{
+                    height: 35px;
+                width: 35px;
+                }
+                }
+            }
+    
+    .col2{
+        order: -2;     
+     
+        }
+        
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    header{
+      .header_container{
+        padding: 0;
+        margin: 0;
+        position: relative;
+        nav{
+          background: #666;
+             
+       
+        }
+          .title{
+              .mouse{
+                  display: none;
+              }
+              padding-top: 50px;
+              .name{
+                 width: 70%;
+                  min-width: 300px;
+                  font-size: 14px;
+                  padding-top: 10px;
+                  margin-bottom: 10px;
+              }
+              h1{
+                  font-size: 32px;
+              }
+               .title_btns{
+                
+                   display: block;
+                  width: 100%;
+//                display: -webkit-flex;
+//                display: -moz-flex;
+//                display: -ms-flex;
+//                display: -o-flex;
+//                display: flex;
+//                justify-content: space-around;
+//                margin: 10px auto 0;
+                height: 30px;
+//                text-transform: uppercase;
+                   &>:first-child{
+                       position: absolute;
+                       left: 0;
+                       bottom: 0;
+                       margin: 0;
+                       
+                       
+                      
+                   }
+                     &>:last-child{
+                         position: absolute;
+                         right: 0;
+                       bottom: 0;
+                       margin: 0;
+                   }
+            }
+              
+            .title-btn{
+                height: 30px;
+                font-size: 14px;
+                display: block;
+            padding: 5px 40px;
+              }
+          }
+      }    
+    }
+    .advantage{
+        justify-content: space-around;
+    }
+    .works_container{
+        .site{
+            img{
+                width: 320px;
+                height: auto;
+            }
+        }
+    }
+  
+   
+  
 }
 
 @-webkit-keyframes ping {
