@@ -6,11 +6,14 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="description" content="">
     <title>Сайт-портфолио, Косолапов Роман, Веб-Разработчик</title>
+    <!--
     <link rel="shortcut icon" href="" type="image/png">
+    -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:800&display=swap" rel="stylesheet">
     <title>My portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js"></script>
+    
 </head>
 <body>
      <?php if(isset($_REQUEST['send'])):?>
@@ -23,26 +26,26 @@
      <!-- Desktop version menu -->
       <ul class="menu">
           <li><a href="http://localhost/portf/index.php">home</a></li>
-          <li><a href="">works</a></li>
-          <li><a href="">skills</a></li>
-          <li><a href="">contact</a></li>
+          <li><a id="a_works" data="works">works</a></li>
+          <li><a id="a_about" data="about">about</a></li>
+          <li><a id="a_contact" data="contact">contact</a></li>
       </ul>
       <!-- Mobile version menu -->
       <ul id="menu-mobile" class="menu-mobile">
-         <img id="menu-humberger" src="./icons/menu.svg" alt="">
-         <img id="close-menu" src="./icons/delete.svg" alt="close_menu">
+         <img id="menu-humberger" class="displayB" src="./icons/menu.svg" alt="">
+         <img id="close-menu" class="displayN" src="./icons/delete.svg" alt="close_menu">
           <li id="li1"><a href="http://localhost/portf/index.php">home</a></li>
-          <li id="li2"><a href="">works</a></li>
-          <li id="li3"><a href="">skills</a></li>
-          <li id="li4"><a href="">contact</a></li>
+          <li id="li2"><a href="#works">works</a></li>
+          <li id="li3"><a href="#about">about</a></li>
+          <li id="li4"><a href="#contact">contact</a></li>
       </ul>
     </nav>
     <div class="title">
            <p class="name">Kosolapov Roman</p>
            <h1>Web Developer</h1>
            <div class="title_btns">
-             <div class="title-btn title_btn-work">view work</div>
-             <div class="title-btn title_btn-hire">hire me</div>
+             <div id="view_works" data="works" class="title-btn title_btn-work">view work</div>
+             <div id="hire_contact" data="contact" class="title-btn title_btn-hire">hire me</div>
            </div>
            <div class="mouse">
                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -65,34 +68,36 @@
       <div class="advantage_card">
           <div class="advantage_card_icon"><img src="icons/transfer.svg" alt="responsive_icon"></div>
           <h4 class="advantage_card_title">Отзывчивая верстка</h4>
-          <p class="advantage_card_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, assumenda.</p>
+          <p class="advantage_card_text">Использование в работе гибкой сетки макета, которая позволяет одному макету работать на разных устройствах.</p>
      </div>
       <div class="advantage_card advantage_card2">
           <div class="advantage_card_icon"><img src="icons/responsive-design-symbol.svg" alt="adaptive_icon"></div>
           <h4 class="advantage_card_title">Адаптивная верстка</h4>
-          <p class="advantage_card_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, assumenda.</p>
+          <p class="advantage_card_text">Верскта обеспечивающа правильное отображение сайта на различных устройствах.</p>
       </div>
       <div class="advantage_card advantage_card3">
           <div class="advantage_card_icon"><img src="icons/web.svg" alt="web.icon"></div>
           <h4 class="advantage_card_title">
           Кроссбраузерная верстка
           </h4>
-          <p class="advantage_card_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, assumenda.</p>
+          <p class="advantage_card_text">Сайты должны выглядеть и работать одинаково хорошо на всех браузерах и всех платформах</p>
       </div>
       <div class="advantage_card advantage_card4">
           <div class="advantage_card_icon"><img src="icons/javascript-hand-drawn-file.svg" alt="js_icon"></div>
           <h4 class="advantage_card_title">
           Интеграция JavaScript
           </h4>
-          <p class="advantage_card_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, assumenda.</p>
+          <p class="advantage_card_text">Добавление анимационных эффектов на сайт.</p>
       </div>
     </section>  
    
-    <section class="about">
+    <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about_container">
             <div class="info">
-                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat fuga culpa sed fugit sapiente quaerat harum reprehenderit recusandae iusto mollitia!</div>
+                <div class="text">
+                Мои увлечения: читаю профессиональную и художественную литературу, занимаюсь волейболом, кататюсь на велосипеде, сноуборде. Люблю получать новые знания и навыки.
+                </div>
                 <table>
                     <tr>
                         <td class="col1">Name</td>
@@ -183,7 +188,9 @@
                     </div>
                 </div>
             </div>
-            <div class="photo"></div>
+            <div class="photo">
+                
+            </div>
             <div class="progress">
                 <h3>My skills</h3>
                 <div class="skill">
@@ -194,7 +201,7 @@
                         </div>
                     </div>
                     <div class="percent">
-                        90%
+                        80%
                     </div>
                 </div>
                 <div class="skill">
@@ -205,7 +212,7 @@
                         </div>
                     </div>
                     <div class="percent">
-                        80%
+                        70%
                     </div>
                 </div>
                 <div class="skill">
@@ -255,7 +262,7 @@
             </div>
         </div>
     </section>
-    <section class="works">
+    <section id="works" class="works">
         <h2>Recent works</h2>
         <div class="works_container">
            <a href="http://www.nevadoc.ru" target="_blank"><div class="site"><img src="images/site1.jpg" alt="img_site">
@@ -275,7 +282,7 @@
            </div></a>
         </div>
     </section>
-    <section class="contact">
+    <section id="contact" class="contact">
         <h2>LETS TALK</h2>
         <div class="contact_container">
             <div class="col col1">
@@ -396,5 +403,6 @@
     require_once('functions.php');
     ?>
 
+ 
 </body>
 </html>

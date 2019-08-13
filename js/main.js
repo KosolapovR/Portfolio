@@ -1,10 +1,15 @@
 window.onload = function(){
    
-    var send_box = document.getElementById('succes_send'),
+
+    var 
+        html = document.documentElement,
+        body = document.body,
+        send_box = document.getElementById('succes_send'),
         menu_mobile = document.getElementById('menu-mobile'),
         title = document.getElementsByClassName('title'),
         menu_humberger = document.getElementById('menu-humberger'),
         close_menu = document.getElementById('close-menu'),
+        
         
         li1 =  document.getElementById('li1'),
         li2 =  document.getElementById('li2'),
@@ -40,8 +45,6 @@ window.onload = function(){
            
        }, 1000);
         
-    }else{
-        console.log("отсутствует");
     }
     
     //MOBILE MENU
@@ -49,10 +52,10 @@ window.onload = function(){
     function fade_menu(){
 
         //отображаем элементы
-        li1.style="display:block";
-        li2.style="display:block";
-        li3.style="display:block";
-        li4.style="display:block";
+        li1.style="display:block !important";
+        li2.style="display:block !important";
+        li3.style="display:block !important";
+        li4.style="display:block !important";
         
       
         
@@ -70,8 +73,12 @@ window.onload = function(){
             if(!menu_clicked)
 //блок разворачивания меню:
             {
-                menu_humberger.style.display="none";
-                close_menu.style.display="block";
+               
+               menu_humberger.classList.add('displayN');
+                 menu_humberger.classList.remove('displayB');
+                 close_menu.classList.remove('displayN');
+                 close_menu.classList.add('displayB');
+               
                 if(li2_posY >= 80)
                 {
                   menu_clicked = true;
@@ -94,16 +101,18 @@ window.onload = function(){
             }else
 //блок cворачивания меню:
             {
-                menu_humberger.style.display="block";
-                close_menu.style.display="none";
+                menu_humberger.classList.add('displayB');
+                 menu_humberger.classList.remove('displayN');
+                 close_menu.classList.remove('displayB');
+                 close_menu.classList.add('displayN');
                 
                 if(li2_posY <= 40){
                     
                     //скрываем элементы когда меню свернулось
-                    li1.style="display:none";
-                    li2.style="display:none";
-                    li3.style="display:none";
-                    li4.style="display:none";
+                    li1.style="display:none !important";
+                    li2.style="display:none !important";
+                    li3.style="display:none !important";
+                    li4.style="display:none !important";
                      menu_clicked = false;
                   
                     clearInterval(id);
@@ -126,6 +135,70 @@ window.onload = function(){
         }, 8);    
     }
     
-    menu_mobile.addEventListener("click", fade_menu);
     
+    //ПРОКРУТКА СТРАНИЦЫ
+    function scroll(elem){
+        var attr_name = elem.getAttribute('data');
+        var target = document.getElementById(attr_name);
+       
+        var scrollHeight = Math.max(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+        
+        var id = setInterval(function(){
+          
+            
+            var correction = 0;
+            if(scrollHeight < target.offsetTop + target.getBoundingClientRect().height + (document.documentElement.clientHeight - target.getBoundingClientRect().height)){
+            correction = target.offsetTop - (scrollHeight - document.documentElement.clientHeight);
+            }
+            
+            
+               window.scrollBy(0, 20);
+            console.log(target.offsetTop + " " + window.pageYOffset + " "  + correction);
+            
+             
+           
+           if(Math.round(window.pageYOffset + correction) >= target.offsetTop){
+                clearInterval(id);
+           }
+       
+        }, 5)
+        
+    }
+    var contact = document.getElementById('contact'),
+        a_contact = document.getElementById('a_contact'),
+        a_works = document.getElementById('a_works'),
+        a_about = document.getElementById('a_about'),
+        hire_contact = document.getElementById('hire_contact'),
+        view_works = document.getElementById('view_works');
+    
+    //отработка нажатия на иконку мыши
+    
+    var mouse_icon = document.getElementsByClassName('mouse');
+    
+    
+   
+    
+    
+    
+    // обработчики событий
+     mouse_icon[0].addEventListener("click", function(){
+           var id = setInterval(function(){
+            if(window.pageYOffset >= document.documentElement.clientHeight){
+                clearInterval(id);
+            }     
+               window.scrollBy(0, 20);
+        }, 12)
+     });
+    
+    a_contact.addEventListener("click", function(){scroll(this);});
+    a_works.addEventListener("click", function(){scroll(this);});
+    a_about.addEventListener("click", function(){scroll(this);});
+    hire_contact.addEventListener("click", function(){scroll(this);});
+    view_works.addEventListener("click", function(){scroll(this);});
+  
+    menu_mobile.addEventListener("click", fade_menu);
 };

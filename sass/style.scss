@@ -11,6 +11,14 @@
    
 }
 
+.displayB{
+    display: block;
+}
+
+.displayN{
+    display: none;
+}
+
 li{
     list-style: none;
 }
@@ -41,9 +49,11 @@ h3{
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 200px;
-    height: 30px;
-    background: white;
+    width: 250px;
+    height: 60px;
+    border-radius: 20px;
+    background: rgba(255,255,255, 0.95);
+    padding: 17px 40px;
     border: 1px solid blue;
     color: #666;
 }
@@ -58,12 +68,7 @@ h3{
         width: 25px;
         
     }
-    #menu-humberger{
-        display:block;
-    }
-    #close-menu{
-        display: none;
-    }
+
 }
 
 
@@ -170,6 +175,7 @@ header{
                 text-transform: uppercase;
                 
             }
+        
             .title-btn{
                 font-weight: 400;
                 margin: 0 auto;
@@ -180,7 +186,10 @@ header{
                 padding: 7px 40px;
                 
                   @include shift;
-                
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                }
                 &:hover{
                       @include shift;
                     cursor: pointer;
@@ -322,19 +331,38 @@ section{
           display: inline-block;
             height: auto;
             .social_item{ 
-                border: 1px solid $accent_color;
-                border-radius: 50px;
+                
+                border-color: #fff;
                 height: 45px;
                 width: 45px;
                 padding: 7px;
                 float: left;
                 margin-right: 20px;
+                fill: $passive_color;
                 &:hover{
-                    cursor: pointer;
+                    @include shift;
+                     border-color: #fff;
                 }
-                svg{
-                height: 30px;
-                width: 30px;
+  
+                a{
+                    svg{
+                        @include shift;
+                        g{
+                            fill: inherit;
+                            path{
+                                fill: inherit;
+                            }
+                        }
+                       // fill: $passive_color;   
+                        height: 30px; 
+                        width: 30px;  
+            
+                        &:hover{
+                        @include shift;
+                        fill: $accent_color;
+                       
+                    } 
+                        } 
                 }
             }
         }
@@ -345,9 +373,15 @@ section{
         -ms-grid-column: 3;
         -ms-grid-row: 1;
         height: 100%;
-       background: url(../images/photo1.jpg);
-        background-size: cover;
-       
+        max-width: 500px;
+        width: 80%;
+     
+      
+        
+       justify-self: center;
+              background: url(../images/photo_self.jpg) no-repeat center/cover;
+           
+        
     }
     
     .progress{
@@ -466,6 +500,7 @@ section{
     }
 }
 
+
 .works_container{
     //overflow-x: hidden;
     height: auto;
@@ -555,8 +590,20 @@ section{
             width: 60px;
             height: 60px;
             svg{
+                 @include shift;
                 height: 40px;
                 width: 40px;
+                fill: $passive_color;
+                g{
+                    fill:inherit;
+                    path{
+                        fill:inherit;
+                    }
+                }
+                &:hover{
+                    @include shift;
+                    fill: $accent_color;
+                }
             }
             
         }
@@ -634,6 +681,12 @@ footer{
 @media (max-width: 700px) {
     header{
         height: 100vh;
+        .title{
+            position: absolute;
+            top: 20%;
+            right: 0;
+            width: 100%;
+        }
     }
   .about_container{
       .progress{
@@ -656,7 +709,7 @@ footer{
                 
                //width: 320px;
                 width: 100%;
-                background: red;
+               
                 //height: auto;
             }
       }
@@ -762,6 +815,9 @@ footer{
        
         }
           .title{
+              height: 70%;
+              position: absolute;
+              top: 30%;
               .mouse{
                   display: none;
               }

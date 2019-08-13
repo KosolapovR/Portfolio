@@ -5,6 +5,12 @@
   padding: 0;
   font-family: 'Open Sans', sans-serif; }
 
+.displayB {
+  display: block; }
+
+.displayN {
+  display: none; }
+
 li {
   list-style: none; }
 
@@ -33,9 +39,11 @@ h3 {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 200px;
-  height: 30px;
-  background: white;
+  width: 250px;
+  height: 60px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 17px 40px;
   border: 1px solid blue;
   color: #666; }
 
@@ -46,10 +54,6 @@ h3 {
     margin: 0 auto;
     height: 25px;
     width: 25px; }
-  .menu-mobile #menu-humberger {
-    display: block; }
-  .menu-mobile #close-menu {
-    display: none; }
 
 header {
   background: url(../bg/bg1.jpg);
@@ -152,6 +156,9 @@ header {
         padding: 7px 40px;
         -webkit-transition: all 0.3s linear;
         transition: all 0.3s linear; }
+        header .header_container .title .title-btn a {
+          color: #fff;
+          text-decoration: none; }
         header .header_container .title .title-btn:hover {
           -webkit-transition: all 0.3s linear;
           transition: all 0.3s linear;
@@ -276,24 +283,38 @@ section {
       display: inline-block;
       height: auto; }
       .about_container .info .social .social_item {
-        border: 1px solid #80ACEE;
-        border-radius: 50px;
+        border-color: #fff;
         height: 45px;
         width: 45px;
         padding: 7px;
         float: left;
-        margin-right: 20px; }
+        margin-right: 20px;
+        fill: #6C6A6B; }
         .about_container .info .social .social_item:hover {
-          cursor: pointer; }
-        .about_container .info .social .social_item svg {
+          -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear;
+          border-color: #fff; }
+        .about_container .info .social .social_item a svg {
+          -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear;
           height: 30px;
           width: 30px; }
+          .about_container .info .social .social_item a svg g {
+            fill: inherit; }
+            .about_container .info .social .social_item a svg g path {
+              fill: inherit; }
+          .about_container .info .social .social_item a svg:hover {
+            -webkit-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            fill: #80ACEE; }
   .about_container .photo {
     -ms-grid-column: 3;
     -ms-grid-row: 1;
     height: 100%;
-    background: url(../images/photo1.jpg);
-    background-size: cover; }
+    max-width: 500px;
+    width: 80%;
+    justify-self: center;
+    background: url(../images/photo_self.jpg) no-repeat center/cover; }
   .about_container .progress {
     -ms-grid-column: 1;
     -ms-grid-row: 3;
@@ -471,8 +492,19 @@ section {
       width: 60px;
       height: 60px; }
       .contact_container .col1 .social_item svg {
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear;
         height: 40px;
-        width: 40px; }
+        width: 40px;
+        fill: #6C6A6B; }
+        .contact_container .col1 .social_item svg g {
+          fill: inherit; }
+          .contact_container .col1 .social_item svg g path {
+            fill: inherit; }
+        .contact_container .col1 .social_item svg:hover {
+          -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear;
+          fill: #80ACEE; }
     .contact_container .col1 .social_item-call a svg {
       height: 35px;
       width: 35px; }
@@ -524,6 +556,11 @@ footer {
 @media (max-width: 700px) {
   header {
     height: 100vh; }
+    header .title {
+      position: absolute;
+      top: 20%;
+      right: 0;
+      width: 100%; }
   .about_container {
     grid: repeat(3, 1fr)/1fr;
     -ms-grid-columns: 100%;
@@ -539,8 +576,7 @@ footer {
       -ms-grid-column: 1;
       grid-row: 2; }
       .about_container .info .text {
-        width: 100%;
-        background: red; }
+        width: 100%; }
     .about_container .photo {
       -ms-grid-column: 1;
       -ms-grid-row: 1;
@@ -615,6 +651,9 @@ footer {
           top: 40px;
           z-index: 1; }
     header .header_container .title {
+      height: 70%;
+      position: absolute;
+      top: 30%;
       padding-top: 50px; }
       header .header_container .title .mouse {
         display: none; }
