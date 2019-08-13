@@ -36,13 +36,13 @@ window.onload = function(){
           var id = setInterval(function(){
               send_box.style = "opacity: " + opacity;
               opacity -= 0.01;
-              if(opacity == 0){
+              console.log(opacity);
+              if(opacity <= 0){
                   clearInterval(id);
                   send_box.style="display:none";
               }
-          }, 20);
-           
-           
+               send_box.style = "opacity: " + opacity;
+          }, 20); 
        }, 1000);
         
     }
@@ -90,7 +90,7 @@ window.onload = function(){
                     li2_posY +=1;
                     li3_posY += 2;
                     li4_posY += 3;
-                    title_posY += 4;
+                    title_posY += 2;
                     li2.style.top = li2_posY + "px";
                     li3.style.top = li3_posY + "px";
                     li4.style.top = li4_posY + "px";
@@ -124,7 +124,7 @@ window.onload = function(){
                     li2_posY -= 1;
                     li3_posY -= 2;
                     li4_posY -= 3;
-                    title_posY -= 4;
+                    title_posY -= 2;
                     
                     li2.style.top = li2_posY + "px";
                     li3.style.top = li3_posY + "px";

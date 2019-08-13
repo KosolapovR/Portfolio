@@ -16,10 +16,23 @@
     
 </head>
 <body>
-     <?php if(isset($_REQUEST['send'])):?>
-     <div id="succes_send">Письмо отправлено!
-     </div>
-     <?php endif; ?>
+     <?php 
+    session_start();
+    
+    if(isset($_REQUEST['send'])){
+        $_SESSION['block'] = '<div id="succes_send">Письмо отправлено!</div>';
+        require_once('functions.php');
+        header("Location: index.php");
+       die;
+    }
+    ?>
+    
+    <?php
+    if(isset($_SESSION['block'])){ 
+            echo $_SESSION['block'];
+            unset($_SESSION['block']);
+        }
+    ?>
   <header>
    <div class="header_container">
     <nav>
@@ -382,7 +395,7 @@
             </div>
             </div>
             <div class="col col2">
-            <form action="<?=$_SERVER['SCRIPT_NAME']?>" method="post">
+            <form action="" method="post">
                 
                 <input name="author" type="text" placeholder="Name">
                 
@@ -396,13 +409,9 @@
     </section>
   </main>
   <footer>
-      
+  <div class="footer_conteiner">
+      <p>Saint-Petersburg 2019</p>
+  </div>
   </footer>
-  
-  <?php
-    require_once('functions.php');
-    ?>
-
- 
 </body>
 </html>

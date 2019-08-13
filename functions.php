@@ -1,6 +1,6 @@
 <?php
-
     if(isset($_REQUEST['send'])){
+        
         $to = "kosolapov-r@bk.ru";
 $from = $_REQUEST['from'];
 $author = 'Письмо от ' . $_REQUEST['author'];
@@ -29,6 +29,7 @@ $headers = [
 ];
 mail($to, $author, $msg, $headers);
        
-        
+  
     }
+
 ?>
